@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "112614854777",
+    "project_id": "barrapp-cbr-165e3",
+    "storage_bucket": "barrapp-cbr-165e3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112614854777:android:5da374e61e652cee90c4a8",
+        "android_client_info": {
+          "package_name": "barrApp.cbr.apk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDts45SMuJ2xMJoYqnmbYLkB8DnNXpkwyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
