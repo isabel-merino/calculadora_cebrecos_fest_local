@@ -1,16 +1,21 @@
 # calculadora_cebrecos_fest_local
 
-A new Flutter project.
+Frontend de l'applicació desenvolupada com a treball de fi del grau d'Enginyeria Informàtica.
 
-## Getting Started
+## BarrApp CBR
 
-This project is a starting point for a Flutter application.
+Applicació que computa matemàticament les comandes que es fan a la barra de bar d’un poble de la província de Burgos durant les seves festes populars.
 
-A few resources to get you started if this is your first Flutter project:
+### Objectius:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Solucionar la problemàtica que presenta el càlcul mental del preu de cada comanda.
+- Evitar que el personal de la carpa hagi de memoritzar els preus de tots productes.
+- Agilitzar el servei de comandes.
+- Facilitar la venda de productes al públic.
+- Garantir la seguretat dels usuaris.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Funcionament:
+
+L'applicació consisteix en 3 pàgines a les quals es pot accedir a través de la barra de navegació situada a la part inferior del dispositiu. 
+La 1a pàgina introdueix la quantitat de begudes demanades i la 2a pàgina, la quantitat de menjars. El sumatori del preu de tots els items es va emmagatzemant en una variable global situada sempre a la part superior de totes les pàgines.
+La 3a pàgina serveix per calcular la quantitat de diners a tornar en funció dels diners rebuts (si és necessari) i esborrar la comanda actual per reiniciar-ne una de nova.
