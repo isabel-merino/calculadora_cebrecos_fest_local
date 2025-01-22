@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:calculadora_cebrecos_fest_local/screen_navigation_bar.dart';
+import 'package:calculadora_cebrecos_fest_local/screen_login.dart';
 
 class ScreenSignUp extends StatelessWidget{
 
@@ -49,6 +50,25 @@ class ScreenSignUp extends StatelessWidget{
                   border: OutlineInputBorder(),
                   suffixIcon: Icon(Icons.visibility_off),
                 ),
+              ),
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "¿Ya tienes una cuenta?", 
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold,),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenLogin()),);
+                    },
+                    child: Text(
+                      'Accede aquí', 
+                      style: TextStyle(color: Colors.teal.shade200),
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 38,),
               ElevatedButton(

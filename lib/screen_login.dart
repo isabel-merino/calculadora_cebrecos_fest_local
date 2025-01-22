@@ -48,14 +48,17 @@ class ScreenLogin extends StatelessWidget{
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("No tienes una cuenta?"),
+                  Text(
+                    "¿No tienes una cuenta?", 
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold,),
+                  ),
                   TextButton(
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenSignUp()),);
                     },
                     child: Text(
                       'Regístrate aquí', 
-                      style: TextStyle(color: Colors.blue),
+                      style: TextStyle(color: Colors.teal.shade200),
                     ),
                   ),
                 ],
