@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -51,7 +48,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDts45SMuJ2xMJoYqnmbYLkB8DnNXpkwyI',
-    appId: '1:112614854777:android:5da374e61e652cee90c4a8',
+    appId: '1:112614854777:android:8826826d32acb79190c4a8',
     messagingSenderId: '112614854777',
     projectId: 'barrapp-cbr-165e3',
     storageBucket: 'barrapp-cbr-165e3.firebasestorage.app',
@@ -63,6 +60,18 @@ class DefaultFirebaseOptions {
     messagingSenderId: '112614854777',
     projectId: 'barrapp-cbr-165e3',
     storageBucket: 'barrapp-cbr-165e3.firebasestorage.app',
+    iosClientId: '112614854777-qodqbvpufi7puj8edmd4dgf48cbscpbi.apps.googleusercontent.com',
     iosBundleId: 'com.example.calculadoraCebrecosFestLocal',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBKIkpOa93gV1JCmOon3RH6fDebiaZ7FRs',
+    appId: '1:112614854777:web:7a65d73afc2b724890c4a8',
+    messagingSenderId: '112614854777',
+    projectId: 'barrapp-cbr-165e3',
+    authDomain: 'barrapp-cbr-165e3.firebaseapp.com',
+    storageBucket: 'barrapp-cbr-165e3.firebasestorage.app',
+    measurementId: 'G-DR06V1JCJ4',
+  );
+
 }

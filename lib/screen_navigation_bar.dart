@@ -72,22 +72,4 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget>{
 
   }
 
-  /*TheBottomNavigationBar(BuildContext context){
-    bottomNavigationBar = BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.wine_bar),
-              label: 'Bebidas'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.restaurant),
-              label: 'Comida'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.calculate_outlined),
-              label: 'Cuenta')
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.pink.shade300,
-        onTap: _onItemTapped,
-    );
-  }*/
 }

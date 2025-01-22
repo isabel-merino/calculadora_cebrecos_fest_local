@@ -12,7 +12,12 @@
           "package_name": "barrApp.cbr.apk"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "112614854777-9gm0sjq58g5het448oqp3r7djp4e6mg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDts45SMuJ2xMJoYqnmbYLkB8DnNXpkwyI"
@@ -20,7 +25,55 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112614854777-9gm0sjq58g5het448oqp3r7djp4e6mg3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "112614854777-qodqbvpufi7puj8edmd4dgf48cbscpbi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.calculadoraCebrecosFestLocal"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112614854777:android:8826826d32acb79190c4a8",
+        "android_client_info": {
+          "package_name": "com.barrapp.apk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112614854777-9gm0sjq58g5het448oqp3r7djp4e6mg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDts45SMuJ2xMJoYqnmbYLkB8DnNXpkwyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112614854777-9gm0sjq58g5het448oqp3r7djp4e6mg3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "112614854777-qodqbvpufi7puj8edmd4dgf48cbscpbi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.calculadoraCebrecosFestLocal"
+              }
+            }
+          ]
         }
       }
     }
