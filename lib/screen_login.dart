@@ -1,10 +1,59 @@
+import 'package:calculadora_cebrecos_fest_local/firebase_auth_services.dart';
 import 'package:calculadora_cebrecos_fest_local/screen_signup.dart';
 import 'package:flutter/material.dart';
 import 'package:calculadora_cebrecos_fest_local/screen_navigation_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class ScreenLogin extends StatelessWidget{
+class ScreenLogIn extends StatefulWidget{
 
-  const ScreenLogin({super.key});
+  const ScreenLogIn({super.key});
+
+  @override
+  State<ScreenLogIn> createState() => _ScreenLogInState();
+}
+
+class _ScreenLogInState extends State<ScreenLogIn>{
+
+  final FirebaseAuthServices _auth = FirebaseAuthServices();
+
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  void _showSnackBar(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        backgroundColor: Colors.red,
+        duration: const Duration(seconds: 3),
+      ),
+    );
+  }  
+
+  void _logIn() async {
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    try {
+      User? user = await _auth.signInWithEmailAndPassword(email, password, context);
+
+      if(user != null){
+        print("El usuario se ha identificado correctamente");
+        Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavigationWidget()),);
+      }
+    }
+    catch(e) {
+      print("Se ha producido un error en las credenciales de acceso");
+      _showSnackBar("Email i/o contraseña no son válidos");      
+    }
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +79,7 @@ class ScreenLogin extends StatelessWidget{
               ),
               SizedBox(height: 40),
               TextField(
+                controller: _emailController,
                 decoration: InputDecoration(
                   labelText: 'Email',
                   border: OutlineInputBorder(),
@@ -37,6 +87,7 @@ class ScreenLogin extends StatelessWidget{
               ),
               SizedBox(height: 20),
               TextField(
+                controller: _passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Contraseña',
@@ -66,7 +117,7 @@ class ScreenLogin extends StatelessWidget{
               SizedBox(height: 38,),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => BottomNavigationWidget()),);
+                  _logIn();
                 },
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.pink),
                 child: const Text(

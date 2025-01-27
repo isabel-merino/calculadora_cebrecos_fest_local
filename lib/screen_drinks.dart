@@ -1,3 +1,6 @@
+import 'package:calculadora_cebrecos_fest_local/screen_login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'data.dart';
 import 'global_variable.dart';
@@ -13,11 +16,17 @@ class ScreenDrinks extends StatefulWidget {
 
 class _ScreenDrinks extends State<ScreenDrinks> {
   late List<Product> bebidas = preciosBebidas.bebidas;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   void initState() {
     super.initState();
     GlobalVariables().summ;
+  }
+
+  void _signOut() async {
+    await _auth.signOut();
+    Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenLogIn()),);
   }
 
   @override
@@ -27,6 +36,13 @@ class _ScreenDrinks extends State<ScreenDrinks> {
         backgroundColor: const Color.fromARGB(255, 33, 13, 161), //blue
         foregroundColor: Theme.of(context).colorScheme.onPrimary, //white
         title: const Text("BarrApp Cebrecos Fest"),
+        actions: [
+          IconButton(
+            onPressed: (){
+              _signOut();
+            }, 
+            icon: const Icon(Icons.logout, color: Colors.white))
+        ],
       ),
       body: Column(
         children: [

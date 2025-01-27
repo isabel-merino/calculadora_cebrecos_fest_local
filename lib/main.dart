@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       //home: BottomNavigationWidget(),
-      home: ScreenLogin(),
+      home: ScreenLogIn(),
       //home: const AuthGate(),
     );
   }
