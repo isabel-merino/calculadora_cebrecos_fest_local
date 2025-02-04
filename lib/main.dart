@@ -1,6 +1,6 @@
 import 'package:calculadora_cebrecos_fest_local/firebase_options.dart';
 import 'package:calculadora_cebrecos_fest_local/screen_login.dart';
-import 'package:calculadora_cebrecos_fest_local/screen_navigation_bar.dart';
+//import 'package:calculadora_cebrecos_fest_local/screen_navigation_bar.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 //import 'package:provider/provider.dart';
