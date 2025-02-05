@@ -8,10 +8,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 // ignore: must_be_immutable
 class ScreenCalculation extends StatefulWidget {
 
-  // late List<Product> bebidas = preciosBebidas.bebidas;
-  // late List<Product> comidas = preciosComida.comidas;
-
   ScreenCalculation({super.key});
+  
   @override
   _ScreenCalculationState createState() => _ScreenCalculationState();
 }
@@ -57,13 +55,6 @@ class _ScreenCalculationState extends State<ScreenCalculation> {
       GlobalVariables().summ = 0.0;
       dineroRecibidoController.clear();
       dineroADevolver = '0';
-
-      // for (var bebida in widget.bebidas) {
-      //   bebida.count = 0;
-      // }
-      // for (var comida in widget.comidas) {
-      //   comida.count = 0;
-      // }
     });
   }
 
