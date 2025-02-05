@@ -1,5 +1,6 @@
 import 'package:calculadora_cebrecos_fest_local/firebase_options.dart';
 import 'package:calculadora_cebrecos_fest_local/screen_login.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:calculadora_cebrecos_fest_local/screen_navigation_bar.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  FirebaseFirestore.instance.settings = const Settings(persistenceEnabled: true);
   runApp(
     // ChangeNotifierProvider(
     //   create: (_) => Product(name, price)

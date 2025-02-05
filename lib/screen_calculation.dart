@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'data.dart';
 import 'global_variable.dart';
 import 'package:flutter/services.dart';
+import 'package:calculadora_cebrecos_fest_local/screen_login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 // ignore: must_be_immutable
 class ScreenCalculation extends StatefulWidget {
-  late List<Product> bebidas = preciosBebidas.bebidas;
-  late List<Product> comidas = preciosComida.comidas;
+
+  // late List<Product> bebidas = preciosBebidas.bebidas;
+  // late List<Product> comidas = preciosComida.comidas;
 
   ScreenCalculation({super.key});
   @override
@@ -14,8 +17,26 @@ class ScreenCalculation extends StatefulWidget {
 }
 
 class _ScreenCalculationState extends State<ScreenCalculation> {
+  late Future<List<Product>> _bebidasFuture;
+  late Future<List<Product>> _comidasFuture;
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
   final TextEditingController dineroRecibidoController = TextEditingController();
   String dineroADevolver = '0';
+
+  @override
+  void initState() {
+    super.initState();
+    GlobalVariables().summ;
+    _bebidasFuture = preciosBebidas().obtenerBebidas(); 
+    _comidasFuture = preciosComida().obtenerComidas(); 
+  }
+
+  void _signOut() async {
+    await _auth.signOut();
+    Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenLogIn()),);
+  }
 
   void calcularDevolucion() {
     final double? dineroRecibido = double.tryParse(dineroRecibidoController.text);
@@ -37,19 +58,13 @@ class _ScreenCalculationState extends State<ScreenCalculation> {
       dineroRecibidoController.clear();
       dineroADevolver = '0';
 
-      for (var bebida in widget.bebidas) {
-        bebida.count = 0;
-      }
-      for (var comida in widget.comidas) {
-        comida.count = 0;
-      }
+      // for (var bebida in widget.bebidas) {
+      //   bebida.count = 0;
+      // }
+      // for (var comida in widget.comidas) {
+      //   comida.count = 0;
+      // }
     });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    GlobalVariables().summ;
   }
 
   @override
@@ -59,6 +74,13 @@ class _ScreenCalculationState extends State<ScreenCalculation> {
         backgroundColor: const Color.fromARGB(255, 33, 13, 161), //blue
         foregroundColor: Theme.of(context).colorScheme.onPrimary, //white
         title: const Text("BarrApp Cebrecos Fest"),
+        actions: [
+          IconButton(
+            onPressed: (){
+              _signOut();
+            }, 
+            icon: const Icon(Icons.logout, color: Colors.white))
+        ],
       ),
       body: GestureDetector(
         onTap: () {
